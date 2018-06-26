@@ -1,0 +1,18 @@
+[core]
+	excludesfile = /Users/amitdash/.gitignore_global
+	commentChar = ";"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+	gui = !sh -c '/usr/local/opt/git/libexec/git-core/git-gui'
+[user]
+	name = amit dash
+	email = dbamit@thoughtworks.com
+[commit]
+	template = /Users/amitdash/.stCommitMsg
+[help]
+	autocorrect = 5
