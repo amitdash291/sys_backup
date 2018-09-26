@@ -102,21 +102,6 @@ alias nrepo='cd; cd SourceCode/ott-notifications'
 #Psql aliases
 alias pstart='pg_ctl -D /usr/local/var/postgres/ start'
 alias pstop='pg_ctl -D /usr/local/var/postgres_9.5.2 stop'
-alias psrsqa='psql -h 172.16.20.199 -p 5445 -d postgres -U admin'
-alias psasqa='psql -h 172.16.20.199 -d store_assortment_qa -p5436 -Uadmin'
-alias psrsprod='psql -h 172.16.20.86 -d store_replenishment_prod -p5445 -Ureadonly'
-alias psasprod='psql -h172.16.20.86 -dstore_assortment_prod -p5436 -Ureadonly'
-
-#SSH aliases
-alias qa2='ssh -t z-qa2.dnspam "sudo -i"'
-alias qa3='ssh -t z-qa3.dnspam "sudo -i"'
-alias prod10='ssh -t z-prod10.dnspam "sudo -i"'
-alias prod11='ssh -t z-prod11.dnspam "sudo -i"'
-alias prodcom1='ssh -t z-prod-com-vm1.dnspam "sudo -i"'
-alias prodcom2='ssh -t z-prod-com-vm2.dnspam "sudo -i"'
-alias qadb='ssh -t z-qa-vm1.dnspam "sudo -i"'
-alias proddb='ssh -t spmerchserver2.dnspam "sudo -i"'
-alias proddb2='ssh -t z-prod-comdb-vm1.dnspam "sudo -i"'
 
 #Git aliases
 alias cup='cd;cd SourceCode;gitup .'
