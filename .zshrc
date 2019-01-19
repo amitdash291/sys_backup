@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/amitdash/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="kphoen"
-DEFAULT_USER="amitdash"
+#DEFAULT_USER="amitdash"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -104,12 +104,13 @@ alias pstart='pg_ctl -D /usr/local/var/postgres/ start'
 alias pstop='pg_ctl -D /usr/local/var/postgres_9.5.2 stop'
 
 #Git aliases
-alias cup='cd;cd SourceCode;gitup .'
+alias gups='git stash && gup && git stash pop'
+alias gbn='git checkout -b'
+alias gcln='git branch | xargs -I {} git branch -D {}'
+alias cup='cd;cd "source";gitup .'
+alias grfr='gco develop && gup && git fetch -p && git prune && gcln'
 
 #Build aliases
-alias b='./build_scripts/local_build.sh'
-alias bgo='./build_scripts/go_build.sh'
-alias fb='./build_scripts/unclean_build.sh'
 alias sg='./gradlew styleGuides'
 alias bdep='./gradlew clean shadowJar --refresh-dependencies'
 
@@ -118,11 +119,11 @@ alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias cloj="lein repl"
 alias mongostart="mongod --config /usr/local/etc/mongod.conf"
 alias mongostop="mongo --eval \"db.getSiblingDB('admin').shutdownServer()\""
-alias adbsqlite="osascript ~/adb_shell_sqlite.scpt"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 source ~/.bashrc
+source ~/.kubectl-aliases
 
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -133,3 +134,4 @@ if [ -f '/Users/amitdash/Setups/Tech/google-cloud-sdk/path.zsh.inc' ]; then sour
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/amitdash/Setups/Tech/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/amitdash/Setups/Tech/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/usr/local/opt/curl/bin:$PATH"
