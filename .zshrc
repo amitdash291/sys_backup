@@ -1,12 +1,15 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="kphoen"
-#DEFAULT_USER="amitdash"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -46,18 +49,18 @@ ZSH_THEME="kphoen"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git alias-tips)
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -76,10 +79,10 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 #android home
-export ANDROID_HOME=/Users/amitdash/Library/Android/sdk
-export ANDROID_AVD_HOME=/Users/amitdash/.android/avd
-export ANDROID_SDK_ROOT=/Users/amitdash/Library/Android/sdk
-export PATH=$PATH:"/Users/amitdash/Library/Android/sdk/tools"
+export ANDROID_HOME=/Users/thw3901/Library/Android/sdk
+export ANDROID_AVD_HOME=/Users/thw3901/.android/avd
+export ANDROID_SDK_ROOT=/Users/thw3901/Library/Android/sdk
+export PATH=$PATH:"/Users/thw3901/Library/Android/sdk/tools"
 export PATH=$PATH:"$ANDROID_HOME/platform-tools"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -90,18 +93,6 @@ export PATH=$PATH:"$ANDROID_HOME/platform-tools"
 # Zsh aliases
 alias zshcon='vim ~/.zshrc'
 alias zshcons='source ~/.zshrc'
-# alias ohmyzsh="vim ~/.oh-my-zsh"
-
-#Navigation aliases
-alias d3='cd; cd SourceCode'
-alias authrepo='cd; cd SourceCode/ott-authenticator'
-alias nflrepo='cd; cd SourceCode/ott-framework'
-alias corerepo='cd; cd SourceCode/ott-netcore-framework'
-alias nrepo='cd; cd SourceCode/ott-notifications'
-
-#Psql aliases
-alias pstart='pg_ctl -D /usr/local/var/postgres/ start'
-alias pstop='pg_ctl -D /usr/local/var/postgres_9.5.2 stop'
 
 #Git aliases
 alias gups='git stash && gup && git stash pop'
@@ -110,28 +101,8 @@ alias gcln='git branch | xargs -I {} git branch -D {}'
 alias cup='cd;cd "source";gitup .'
 alias grfr='gco develop && gup && git fetch -p && git prune && gcln'
 
-#Build aliases
-alias sg='./gradlew styleGuides'
-alias bdep='./gradlew clean shadowJar --refresh-dependencies'
-
 #Misc aliases
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-alias cloj="lein repl"
-alias mongostart="mongod --config /usr/local/etc/mongod.conf"
-alias mongostop="mongo --eval \"db.getSiblingDB('admin').shutdownServer()\""
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
-export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-source ~/.bashrc
-source ~/.kubectl-aliases
-
-
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/amitdash/Setups/Tech/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/amitdash/Setups/Tech/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/amitdash/Setups/Tech/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/amitdash/Setups/Tech/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH="/usr/local/opt/curl/bin:$PATH"
